@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Review</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>VMAX</h1>
+
+    <!-- Simple nav bar to navigate between pages -->
+    <nav>
+    <a href="movies.php">Movies</a> |
+    <a href="add_movie.html">Add Movie</a> |
+    <a href="reviews.php">Reviews</a> |
+    <a href="add_review.html">Submit Review</a> |
+    <a href="register_user.html">Register</a> |
+    <a href="directors.php">Directors</a>
+    </nav>
+
+    <h2>Add a Review</h2>
+
+    <form action="add_review_handler.php" method="POST">
+        <!-- Movie ID can be pre-filled from URL -->
+        <label for="movie_id" style="display: none;">Movie ID:</label>
+        <input type="number" id="movie_id" name="movie_id" style="display: none;" required><br><br>
+
+        <label for="user_id">User ID:</label>
+        <input type="number" id="user_id" name="user_id" required><br><br>
+
+        <label for="rating">Rating (1-10):</label>
+        <input type="number" id="rating" name="rating" min="1" max="10" required><br><br>
+
+        <label for="review_text">Review:</label><br>
+        <textarea id="review_text" name="review_text" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Submit Review">
+    </form>
+
+    <script>
+        // If the page URL includes ?movie_id=..., auto-fill the movie ID field
+        const params = new URLSearchParams(window.location.search);
+        const movieId = params.get('movie_id');
+        if (movieId) {
+            document.getElementById('movie_id').value = movieId;
+        }
+    </script>
+</body>
+</html>

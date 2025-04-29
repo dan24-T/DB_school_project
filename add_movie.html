@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Movie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>VMAX</h1>
+
+<!-- Simple nav bar to navigate between pages -->
+<nav>
+  <a href="movies.php">Movies</a> |
+  <a href="add_movie.html">Add Movie</a> |
+  <a href="reviews.php">Reviews</a> |
+  <a href="add_review.html">Submit Review</a> |
+  <a href="register_user.html">Register</a> |
+  <a href="directors.php">Directors</a>
+</nav>
+
+<h2>Add a New Movie</h2>
+
+<!-- Form that collects movie data from the user -->
+<form action="add_movie_handler.php" method="POST">
+  <!-- Movie title -->
+  Title: <input type="text" name="title" required><br><br>
+
+  <!-- Release year -->
+  Release Year: <input type="number" name="year"><br><br>
+
+  <!-- Genre -->
+  Genre: <input type="text" name="genre"><br><br>
+
+  <!-- Director ID (referencing Directors table) -->
+  Director ID: <input type="number" name="director_id"><br><br>
+
+  <!-- Submit button -->
+  <input type="submit" value="Add Movie">
+</form>
+</body>
+</html>

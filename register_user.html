@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register User</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>VMAX</h1>
+
+  <!-- Simple nav bar to navigate between pages -->
+  <nav>
+    <a href="movies.php">Movies</a> |
+    <a href="add_movie.html">Add Movie</a> |
+    <a href="reviews.php">Reviews</a> |
+    <a href="add_review.html">Submit Review</a> |
+    <a href="register_user.html">Register</a> |
+    <a href="directors.php">Directors</a>
+  </nav>
+
+<h2>User Registration</h2>
+
+<form action="register_user_handler.php" method="POST">
+  Username: <input type="text" name="username" required><br><br>
+  Email: <input type="email" name="email" required><br><br>
+
+  <input type="submit" value="Register">
+</form>
+</body>
+</html>
